@@ -11,4 +11,3 @@
         </div>
     </fieldset>
 </form>
-<div>
