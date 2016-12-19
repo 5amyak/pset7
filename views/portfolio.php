@@ -7,6 +7,7 @@
         <td>  <b>Total Price</b>   </td>
     </tr>
     <?php extract($values);
+    $format_cash = number_format($cash_balance["cash"], 2);
     foreach ($positions as $position): 
     $total_price = $position["shares"] * $position["price"]; 
     $total_price = number_format($total_price, 2); 
@@ -23,6 +24,6 @@
     <?php endforeach ?>
     <tr>
         <td><b>CASH BALANCE</b></td>
-        <td colspan="4">$<?= $cash_balance[0]["cash"] ?></td>
+        <td colspan="4">$<?= $format_cash ?></td>
     </tr>
 </table>

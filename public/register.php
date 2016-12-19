@@ -41,7 +41,8 @@
         }
 
         // else apologize
-        apologize("Username Exists : Error");
+        else
+            apologize("Username Exists : Error");
     
     }
 
