@@ -42,7 +42,7 @@
 
         // else apologize
         else
-            apologize("Username Exists : Error");
+            apologize("Error : Username Exists");
     
     }
 
