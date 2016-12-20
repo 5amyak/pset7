@@ -23,6 +23,7 @@
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         // iterate over all the symbols of shares owned by user
+        // to check which all shares user has decided to sell
         foreach ($symbols as $symbol):
             // user has decided to sell the share
             if (isset($_POST[$symbol["symbol"]])) {
@@ -34,8 +35,10 @@
                 
                 // current date and time
                 date_default_timezone_set("Asia/Kolkata");
+                // decided to use php function to calculate date and time to make it DB independent
                 $date = date("d-M-Y l H:i:s");
                 
+                // Can Use InnoDB Transactions to execute these queries atomically
                 // insert entry regarding this sale into history table
                 CS50::query("INSERT INTO history (user_id, date_time, symbol, transaction_type, shares, price, cash_involved) VALUES(?, ?, ?, ?, ?, ?, ?)",
                             $_SESSION["id"], $date, $symbol["symbol"], "Sell", $shares[0]["shares"], $price, $cash);

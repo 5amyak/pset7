@@ -4,7 +4,7 @@
     require("../includes/config.php"); 
 
     // rows regarding user logged in
-    $rows = CS50::query("SELECT * FROM portfolios WHERE user_id = ?", $_SESSION["id"]);
+    $rows = CS50::query("SELECT shares, symbol FROM portfolios WHERE user_id = ?", $_SESSION["id"]);
     
     // iterate over each stock user owns
     // look for latest price
@@ -26,6 +26,8 @@
     
     // store the latest cash value the user owns
     $cash_balance = CS50::query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]);
+    
+    //decided not to check return value of $cash_balance since it is not expected to return false 
     
     // render portfolio and pass the data
     render("portfolio.php", ["positions" => $positions, "title" => "Portfolio", "cash_balance" => $cash_balance[0]]);
