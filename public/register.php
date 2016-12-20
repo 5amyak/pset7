@@ -36,7 +36,9 @@
             // get id of new user
             $row = CS50::query("SELECT LAST_INSERT_ID() AS id");
             $id = $row[0]["id"];
+            // store it in session superglobal
             $_SESSION["id"] = $id;
+            // redirect to home page
             redirect("index.php");
         }
 

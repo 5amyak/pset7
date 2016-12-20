@@ -6,7 +6,7 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        // else render form
+        // then render form
         render("quote_form.php", ["title" => "Get Quote"]);
     }
 
@@ -19,12 +19,17 @@
             apologize("You must provide Symbol.");
         }
         
+        // look for data regarding symbol
+        // pass it on with render
         else {
             $data = lookup($_POST["symbol"]);
+            
+            // validate symbol entered
             if (!$data) {
                 apologize("Invalid Symbol");
             }
             
+            // render quote_price
             else {
                 $data["title"] = "Quote";
                 render("quote_price.php", $data);

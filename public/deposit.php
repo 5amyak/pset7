@@ -19,19 +19,25 @@
             apologize("You must provide Money to be deposited.");
         }
         
+        // value entered not a numeric string
         if (!is_numeric($_POST["money"]))
         {
             apologize("You must input Money Correctly");
         }
         
+        // convert string value to float
         $money = floatval($_POST["money"]);
+        // negative money
         if ($money < 0)
         {
             apologize("You must input Money Correctly");
         }
         
         else {
+            // update amount of cash user owns
             CS50::query("UPDATE users SET cash = cash + ? WHERE id = ?", $money, $_SESSION["id"]);
+            
+            // redirect to home page
             redirect("index.php");
         }
     }
