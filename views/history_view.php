@@ -9,17 +9,18 @@
     </tr>
     <?php extract($values);
     foreach ($rows as $row):
-    $row["cash_involved"] = number_format($row["cash_involved"], 2);
-    $row["price"] = number_format($row["price"], 2); ?>
+        //format output to improve readability
+        $row["cash_involved"] = number_format($row["cash_involved"], 2);
+        $row["price"] = number_format($row["price"], 2); ?>
     
-        <tr>
-            <td><?= $row["date_time"] ?></td>
-            <td><?= $row["symbol"] ?></td>
-            <td><?= $row["transaction_type"] ?></td>
-            <td><?= $row["shares"] ?></td>
-            <td>$<?= $row["price"] ?></td>
-            <td>$<?= $row["cash_involved"] ?></td>
-        </tr>
+            <tr>
+                <td><?= $row["date_time"] ?></td>
+                <td><?= $row["symbol"] ?></td>
+                <td><?= $row["transaction_type"] ?></td>
+                <td><?= $row["shares"] ?></td>
+                <td>$<?= $row["price"] ?></td>
+                <td>$<?= $row["cash_involved"] ?></td>
+            </tr>
     
     <?php endforeach ?>
 </table>

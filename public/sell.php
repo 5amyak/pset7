@@ -5,6 +5,8 @@
     
     // symbols of shares owned by user
     $symbols = CS50::query("SELECT symbol FROM portfolios WHERE user_id = ?", $_SESSION["id"]);
+    
+    //decided not to check return value of $symbols since it is not expected to return false 
 
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")

@@ -3,7 +3,7 @@
         <div class="form-group">
             <?php extract($values);
             foreach ($symbols as $symbol): ?>
-                <input type="checkbox" name="<?= $symbol["symbol"] ?>" value="<?= $symbol["symbol"] ?>"><?= $symbol["symbol"] ?><br>
+                <input type="checkbox" name="<?= $symbol["symbol"] ?>" value="<?= $symbol["symbol"] ?>"> <?= $symbol["symbol"] ?>  <br>
             <?php endforeach ?>
         </div>
         <div class="form-group">

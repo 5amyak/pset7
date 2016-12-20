@@ -27,7 +27,7 @@
         // checks value of shares
         if (!preg_match("/^\d+$/", $_POST["shares"]))
         {
-            apologize("You must provide Shares in Exact Amount.");
+            apologize("You must provide a valid value of Shares.");
         }
         
         // for valid submission
