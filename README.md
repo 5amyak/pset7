@@ -1,4 +1,4 @@
-# pset7
+# Problem Set 7: C$50 Finance
 
 C$50 Finance
 Project Work <br>
